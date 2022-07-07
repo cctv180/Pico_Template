@@ -18,6 +18,9 @@
 #include "pico/stdlib.h"
 #include "perf_counter.h"
 
+#include "arm_2d.h"
+#include "arm_2d_disp_adapter_0.h"
+
 #define __PICO_USE_LCD_1IN3__ 1
 
 #if defined(__PICO_USE_LCD_1IN3__) && __PICO_USE_LCD_1IN3__
@@ -37,8 +40,8 @@
 #define TOP         (0x1FFF)
 
 /*============================ MACROFIED FUNCTIONS ===========================*/
-#define ABS(__N)    ((__N) < 0 ? -(__N) : (__N))
-#define _BV(__N)    ((uint32_t)1<<(__N))
+//#define ABS(__N)    ((__N) < 0 ? -(__N) : (__N))
+//#define _BV(__N)    ((uint32_t)1<<(__N))
 
 
 
@@ -131,6 +134,13 @@ int main(void)
     system_init();
 
     printf("Hello Pico-Template\r\n");
+    arm_irq_safe {
+        arm_2d_init(); // init arm-2d
+    }
+
+    // Init Display Adapter 0
+    disp_adapter0_init();
+
     uint32_t n = 0;
     
     while (true) {
@@ -139,6 +149,7 @@ int main(void)
         //sleep_ms(500);
         //gpio_put(PICO_DEFAULT_LED_PIN, 0);
         //sleep_ms(500);
+        disp_adapter0_task();
     }
     //return 0;
 }

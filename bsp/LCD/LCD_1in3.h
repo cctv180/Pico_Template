@@ -49,7 +49,7 @@ void LCD_1IN3_DisplayWindows(UWORD Xstart, UWORD Ystart, UWORD Xend, UWORD Yend,
 void LCD_1IN3_DisplayPoint(UWORD X, UWORD Y, UWORD Color);
 
 extern 
-void GLCD_DrawBitmap(   int_fast16_t x, int_fast16_t y, 
+void Disp0_DrawBitmap(   int_fast16_t x, int_fast16_t y,
                         int_fast16_t width, int_fast16_t height,
                         uint16_t *frame_ptr);
 

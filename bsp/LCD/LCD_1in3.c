@@ -269,7 +269,7 @@ void LCD_1IN3_Display(UWORD *Image)
     LCD_1IN3_SendCommand(0x29);
 }
 
-void GLCD_DrawBitmap(   int_fast16_t x, int_fast16_t y, 
+void Disp0_DrawBitmap(   int_fast16_t x, int_fast16_t y,
                         int_fast16_t width, int_fast16_t height,
                         uint16_t *frame_ptr)
 {
