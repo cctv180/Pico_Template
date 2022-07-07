@@ -52,6 +52,11 @@ dkms.conf
 project/mdk/Objects/template.build_log.htm
 project/mdk/Objects/template.sct
 *.dep
+
+project/EmbeddedProject1
+
+project/mdk/*.uvoptx
+project/mdk/*.uvguix.*
 project/mdk/template.uvguix.gabwan01
 project/mdk/template.uvguix.gabriel
 project/mdk/Objects/template.lnp

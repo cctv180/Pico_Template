@@ -18,6 +18,8 @@
 #include "pico/stdlib.h"
 #include "perf_counter.h"
 
+#define __PICO_USE_LCD_1IN3__ 1
+
 #if defined(__PICO_USE_LCD_1IN3__) && __PICO_USE_LCD_1IN3__
 #include "DEV_Config.h"
 #include "LCD_1In3.h"
